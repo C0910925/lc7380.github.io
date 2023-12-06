@@ -1,4 +1,4 @@
-* Reset some default styles */
+/* Reset some default styles */
 body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
@@ -10,13 +10,13 @@ body {
 
 /* Global styles */
 body {
-    background-color: #f4f4f4; /* Background color for the website */
-    font-family: 'Arial', sans-serif; /* Default fonts */
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
 }
 
 .container {
-    width: 100%; /*Container width of the page */
-    margin: 0 auto; /* Center the page */
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Banner styles */
@@ -71,11 +71,10 @@ nav a {
     padding: 5px 10px;
     border-radius: 5px;
     position: relative;
-    transition: color 0.3s ease, transform 0.5s ease; /* Adding a transition for color change */
+    transition: color 0.3s ease, transform 0.5s ease;
 }
 
 nav a:after {
-    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -98,7 +97,7 @@ nav a:hover:after {
 }
 
 /* main section css */
-aside h1, article h1{
+aside h1, article h1 {
     text-align: center;
     color: #6d6e70;
     font-family: 'Nunito', sans-serif;
@@ -107,12 +106,12 @@ aside h1, article h1{
     font-weight: 700;
     text-transform: uppercase;
     margin: 0;
-    	
+
     text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
                  0px -5px 35px rgba(255,255,255,0.3);
 }
 
-aside p, article p{
+aside p, article p {
     text-align: center;
     font-family: 'DM Serif Display', serif;
     font-size: 17px;
@@ -127,16 +126,16 @@ figure {
     max-width: 275px;
     margin: 2% auto;
     border: 8px solid #333;
-    overflow: hidden; /* Ensure that the overflow is hidden for better image containment */
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
 figure:hover {
-    transform: scale(1.1); /* Scale the figure slightly on hover */
+    transform: scale(1.1);
 }
 
 figure img {
-    width: 100%; /* Make the image fill the figure container */
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -154,11 +153,10 @@ figcaption {
     font-weight: bold;
 }
 
-
 /* Style rule for the grid class selector */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(240px, 1fr)); 
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
     gap: 5%;
     padding: 20px;
 }
@@ -173,9 +171,7 @@ aside {
     grid-column: 1 / span 4;
 }
 
-
-
-  /* Footer styles section*/
+/* Footer styles section */
 footer {
     font-size: 0.8em; /* Reduce font size for the footer */
     text-align: center; /* Center text */
@@ -184,16 +180,14 @@ footer {
     color: white;
 }
 
-footer a{
+footer a {
     color: #fff;
     text-decoration: none;
 }
 
-
-/* Tablet styles */
-@media screen and (min-width: 630px), print {
-
-    /*Responsive part only for Navivation header sections for index.html and Speical.html page*/
+/* TABLET RESPONSIVE SECTION */
+@media screen and (min-width: 630px) and (max-width: 1023px) {
+    /* Responsive part only for Navigation header sections for index.html and Special.html page */
     .logo img {
         display: none;
     }
@@ -207,8 +201,8 @@ footer a{
     }
 
     nav a {
-        white-space: nowrap; /* Prevent line breaks within links */
-        flex: 1; /* Distribute available space evenly among links */
+        white-space: nowrap;
+        flex: 1;
         text-align: center;
         margin: 0 10px;
         padding: 8px 0; 
@@ -218,104 +212,130 @@ footer a{
         height: 2px; 
     }
 
-   
-}
+    /* RESPONSIVE TEAM MAIN SECTION */
+    aside h1, article h1 {
+        font-size: clamp(18px, 3vw, 80px);
+    }
 
+    aside p, article p {
+        font-size: 15px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    figure {
+        max-width: 100%;
+        margin: 5% auto;
+    }
+
+    figcaption {
+        font-size: 1.2em;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 5%;
+        padding: 10px;
+    }
+
+    aside {
+        grid-column: 1 / span 2;
+    }
+}
 
 /* Mobile styles */
 @media only screen and (max-width: 480px) {
-
-/* Responsive for Navigation Header part only*/
+    /* Responsive for Navigation Header part only */
     .logo img {
         display: none;
     }
 
     /* Navigation styles */
     nav {
-    display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
-    align-items: center;
-    text-align: center;
-    padding: 2px;
-}
-nav a {
-    text-decoration: none;
-    color: #fff;
-    margin: 10px 0; /* Adjust margin for better spacing on mobile */
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    transition: color 0.3s ease, transform 0.5s ease; /* Adding a transition for color change */
-}
+        display: flex;
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center;
+        text-align: center;
+        padding: 2px;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 10px 0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: relative;
+        transition: color 0.3s ease, transform 0.5s ease;
+    }
 
-/*Responsive for Team main content */
-aside h1, article h1 {
-    text-align: center;
-    color: #6d6e70;
-    font-family: 'Nunito', sans-serif;
-    line-height: 1.2125;
-    font-size: clamp(24px, 8vw, 100px); /* Adjusted font size for mobile */
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0;
-    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
-}
+    /* Responsive for Team main content */
+    aside h1, article h1 {
+        text-align: center;
+        color: #6d6e70;
+        font-family: 'Nunito', sans-serif;
+        line-height: 1.2125;
+        font-size: clamp(24px, 8vw, 100px);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    }
 
-aside p, article p {
-    text-align: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 14px; /* Adjusted font size for mobile */
-    color: #666;
-    line-height: 1.5;
-    padding-left: 5%; /* Adjusted padding for mobile */
-    padding-right: 5%; /* Adjusted padding for mobile */
-}
+    aside p, article p {
+        text-align: center;
+        font-family: 'DM Serif Display', serif;
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+        padding-left: 5%;
+        padding-right: 5%; 
+    }
 
-figure {
-    position: relative;
-    max-width: 100%; /* Make the figure responsive */
-    margin: 2% auto; /* Adjusted margin for spacing between images */
-    border: 8px solid #333;
-    overflow: hidden; /* Ensure that the overflow is hidden for better image containment */
-    transition: transform 0.3s ease;
-}
+    figure {
+        position: relative;
+        max-width: 100%;
+        margin: 2% auto;
+        border: 8px solid #333;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
 
-figure:hover {
-    transform: scale(1.1); /* Scale the figure slightly on hover */
-}
+    figure:hover {
+        transform: scale(1.1);
+    }
 
-figure img {
-    width: 100%; /* Make the image fill the figure container */
-    height: auto;
-    display: block;
-}
+    figure img {
+        width: 100%; /* Make the image fill the figure container */
+        height: auto;
+        display: block;
+    }
 
-figcaption {
-    position: absolute;
-    bottom: 0;
-    background: #333;
-    color: #fff;
-    width: 100%;
-    padding: 5% 0;
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1em; /* Adjusted font size for mobile */
-    font-weight: bold;
-}
+    figcaption {
+        position: absolute;
+        bottom: 0;
+        background: #333;
+        color: #fff;
+        width: 100%;
+        padding: 5% 0;
+        text-align: center;
+        font-family: 'Nunito', sans-serif;
+        font-size: 1em; 
+        font-weight: bold;
+    }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2x2 grid layout for mobile */
-    gap: 5%;
-    padding: 10px; /* Adjusted padding for mobile */
-}
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2x2 grid layout for mobile */
+        gap: 5%;
+        padding: 10px;
+    }
 
-figcaption {
-    font-size: 0.8em;
-}
+    figcaption {
+        font-size: 0.8em;
+    }
 
-aside {
-    grid-column: 1 / span 2;
-}
-
+    aside {
+        grid-column: 1 / span 2;
+    }
 }

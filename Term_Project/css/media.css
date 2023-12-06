@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    width: 100%; /*Container width of the page */
+    width: 100%; /* Container width of the page */
     margin: 0 auto; /* Center the page */
 }
 
@@ -71,7 +71,6 @@ nav a {
 }
 
 nav a:after {
-    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -84,7 +83,7 @@ nav a:after {
 }
 
 nav a:hover {
-    color: #ffcc00; /* Text colour change while hovering  */
+    color: #ffcc00;
     transform: scale(1.3);
 }
 
@@ -93,14 +92,13 @@ nav a:hover:after {
     transform: scaleX(1); /* Scale to reveal the underline on hover */
 }
 
-
 /* Main content */
 main.media-grid {
     display: grid;
-    grid-template-columns: repeat(2, 4fr); /* 2 columns with equal width */
-    grid-gap: 20px; /* Adjust the gap between grid items */
-    justify-items: center; /* Center items horizontally in the grid */
-    margin: 20px; /* Adding margin around the grid */
+    grid-template-columns: repeat(2, 4fr);
+    grid-gap: 20px;
+    justify-items: center;
+    margin: 20px;
 }
 
 /* Style for video items */
@@ -128,7 +126,7 @@ section.video-item video {
 /* Style for audio elements */
 section.audio-item audio {
     width: 80%;
-    height: 50px; /* Adjust the height as needed */
+    height: 50px;
     display: block; /* Remove any default styling */
 }
 
@@ -144,32 +142,31 @@ section.media-item h2 {
 /* Style for paragraphs (p) */
 section.media-item p {
     font-family: sans-serif;
-    color: #666; 
+    color: #666;
     line-height: 1.5;
     padding: 20px;
     margin: 10px;
-    text-align: center; 
+    text-align: center;
 }
 
-/* Footer styles section*/
+/* Footer styles section */
 footer {
-    font-size: 0.8em; /* Reduce font size for the footer */
-    text-align: center; /* Center text */
+    font-size: 0.8em;
+    text-align: center;
     font-family: 'Barlow Condensed', sans-serif;
     background-color: #333;
     color: white;
     margin: 0px 0;
 }
 
-footer a{
+footer a {
     color: #fff;
     text-decoration: none;
 }
 
-/* Tablet styles */
-@media screen and (min-width: 630px), print {
-
-    /*Responsive part only for Navivation header sections for index.html and Speical.html page*/
+/* TABLET RESPONSIVE SECTION */
+@media screen and (min-width: 630px) and (max-width: 1023px) {
+    /* Responsive part only for Navigation header sections for index.html and Special.html page */
     .logo img {
         display: none;
     }
@@ -187,114 +184,156 @@ footer a{
         flex: 1; /* Distribute available space evenly among links */
         text-align: center;
         margin: 0 10px;
-        padding: 8px 0; 
+        padding: 8px 0;
     }
 
     nav a:after {
-        height: 2px; 
+        height: 2px;
     }
 
-   
+    section.media-item h2 {
+        font-size: 15px;
+    }
+    section.media-item p {
+        font-size: 10px;
+    }
+
+    /* RESPONSIVE SECTION FOR MEDIA MAIN PAGE */
+    main.media-grid {
+        grid-template-columns: repeat(2, 1fr); /* Change to a 2x2 grid layout for tablets */
+        grid-gap: 20px;
+    }
+
+    /* Adjusting styling for video items on tablets */
+    section.video-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Adjust styling for video elements on tablets */
+    section.video-item video {
+        width: 100%;
+        height: auto;
+        max-width: 100%; /* Ensure videos don't exceed the screen width */
+    }
+
+    /* Adjust styling for audio items on tablets */
+    section.audio-item {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for audio items on tablets */
+        grid-gap: 20px;
+        max-width: 100%;
+    }
+
+    /* Responsive styles for audio elements on tablets */
+    audio {
+        max-width: 100%; /* Ensure audio elements don't exceed the screen width */
+    }
+
+    /* Adjusting styling for audio controls on tablets */
+    audio::-webkit-media-controls-panel {
+        width: 100%;
+    }
 }
 
-
-/* Mobile styles */
+/* MOBILE RESPONSIVE SECTION */
 @media only screen and (max-width: 480px) {
-
     .container-media {
-    width: 80%;
-    margin: 0 auto;
-}
+        width: 80%;
+        margin: 0 auto;
+    }
 
-/* Responsive for Navigation Header part only*/
+    /* Responsive for Navigation Header part only */
     .logo img {
         display: none;
     }
 
     /* Navigation styles */
     nav {
-    display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
-    align-items: center;
-    text-align: center;
-    padding: 2px;
+        display: flex;
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center;
+        text-align: center;
+        padding: 2px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 10px 0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: relative;
+        transition: color 0.3s ease, transform 0.5s ease;
+    }
+
+    /* Main content */
+    .container-media {
+        width: fit-content;
+    }
+
+    section.media-item h2 {
+        font-size: 15px;
+    }
+    section.media-item p {
+        font-size: 10px;
+    }
+
+    main.media-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Displaying one column for mobile screens */
+        justify-items: center;
+        margin: 20px;
+    }
+
+    /* Style for video items */
+    section.video-item {
+        width: 100%;
+        text-align: center;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 100%; /* Ensure video items don't exceed the screen width */
+    }
+
+    /* Style for video elements */
+    section.video-item video {
+        width: 100%;
+        height: auto;
+        max-width: 100%; /* Ensure videos don't exceed the screen width */
+        display: block;
+    }
+
+    /* Style for audio items */
+    section.audio-item {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column for audio items */
+        grid-gap: 20px;
+    }
+
+    /* Style for each audio item */
+    section.audio-item article {
+        text-align: center;
+    }
+
+    /* Responsive styles for audio elements */
+    audio {
+        width: 100%;
+        height: auto;
+        max-width: 100%; /* Ensure audio elements don't exceed the screen width */
+    }
+
+    /* Style for audio controls */
+    audio {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Adjust styling for audio controls */
+    audio::-webkit-media-controls-panel {
+        width: calc(100% + 20px); /* Adjust width to match the container */
+        margin-left: -10px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 }
-nav a {
-    text-decoration: none;
-    color: #fff;
-    margin: 10px 0; /* Adjust margin for better spacing on mobile */
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    transition: color 0.3s ease, transform 0.5s ease; /* Adding a transition for color change */
-}
-
-
-
-/* Main content */
-.container-media{
-    width: fit-content;
-}
-main.media-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Display one column for mobile screens */
-    justify-items: center;
-    margin: 20px;
-}
-
-/* Style for video items */
-section.video-item {
-    width: 100%;
-    text-align: center;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Ensure video items don't exceed the screen width */
-}
-
-/* Style for video elements */
-section.video-item video {
-    width: 100%;
-    height: auto;
-    max-width: 100%; /* Ensure videos don't exceed the screen width */
-    display: block;
-}
-
-/* Style for audio items */
-section.audio-item {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for audio items */
-    grid-gap: 20px;
-}
-
-/* Style for each audio item */
-section.audio-item article {
-    text-align: center;
-}
-
-/* Responsive styles for audio elements */
-audio {
-    width: 100%;
-    height: auto;
-    max-width: 100%; /* Ensure audio elements don't exceed the screen width */
-}
-
-/* Style for audio controls */
-audio {
-    display: block;
-    margin: 0 auto;
-}
-
-/* Adjust styling for audio controls */
-audio::-webkit-media-controls-panel {
-    width: calc(100% + 20px); /* Adjust width to match the container */
-    margin-left: -10px; /* Center the controls */
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-}
-
-
