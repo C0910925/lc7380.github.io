@@ -169,12 +169,15 @@ nav a:hover:after {
 
 .column p {
     text-align: center; /* Centered paragraph */
+    font-family: 'DM Serif Display', serif;
+    color: #666;
+    line-height: 1.5;
 }
 
 .column ol {
     list-style-type: decimal;
     text-align: center; /* Centered ordered list */
-    padding-left: 0; /* Removed the previous padding-left */
+    padding-left: 40%; /* Removed the previous padding-left */
 }
 
 .column ol li {
@@ -375,10 +378,17 @@ footer a {
         font-size: 7px;
     }
 
+    .column ol {
+        list-style-position: outside; /* Align list items to the left side */
+        padding-left: 20px; /* Remove default padding */
+    }
+    
     .column ol li {
         margin-bottom: 5px;
         font-size: 10px;
         line-height: 1.2;
+        white-space: nowrap;
+        text-align: left; /* Align text to the left */
     }
 
     .centered-content h2 {
