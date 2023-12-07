@@ -67,10 +67,11 @@ nav a {
     padding: 5px 10px;
     border-radius: 5px;
     position: relative;
-    transition: color 0.3s ease, transform 0.5s ease; /* Adding a transition for color change */
+    transition: color 0.3s ease, transform 0.5s ease;
 }
 
 nav a:after {
+    content: '';
     position: absolute;
     width: 100%;
     height: 2px;
@@ -78,8 +79,8 @@ nav a:after {
     left: 0;
     background-color: #fff;
     transform-origin: bottom right;
-    transform: scaleX(0); /* Initial scale to hide the underline */
-    transition: transform 0.3s ease; /* Adding a transition for the underline effect */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 nav a:hover {
@@ -89,7 +90,7 @@ nav a:hover {
 
 nav a:hover:after {
     transform-origin: bottom left;
-    transform: scaleX(1); /* Scale to reveal the underline on hover */
+    transform: scaleX(1);
 }
 
 /* Main content */
@@ -160,8 +161,11 @@ footer {
 }
 
 footer a {
-    color: #fff;
+    color: #CCD1D1;
     text-decoration: none;
+    text-decoration: underline #E5E8E8;
+    font-size: 15px;
+    
 }
 
 /* TABLET RESPONSIVE SECTION */
