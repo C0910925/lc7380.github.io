@@ -432,10 +432,17 @@ footer a {
         gap: 2px;
     }
 
+
+
     .info-item {
         padding: 20px;
         text-align: center;
     }
+
+    .product-showcase h2 {
+        
+        line-height: .99;
+    }   
 
     .product-grid {
         grid-template-columns: repeat(1, minmax(20px, 4fr));
